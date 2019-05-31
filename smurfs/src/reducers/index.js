@@ -1,7 +1,7 @@
 /*
   Be sure to import in all of the action types from `../actions`
 */
-
+import { FETCHING, SUCCESS, FAILURE } from '../actions';
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -13,6 +13,29 @@
    error: null
  }
 */
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case FETCHING:
+      return {
+        ...state,
+        fetching: true
+      }
+    case SUCCESS:
+      return {
+        ...state,
+        fetching: false,
+        characters: [...state.characters, ...action.payload]
+      }    
+      case FAILURE:
+      return {
+        ...state,
+        fetching: false
+      }
+    default:
+      return state;
+  }
+};
 
 /*
   You'll only need one smurf reducer for this project.
