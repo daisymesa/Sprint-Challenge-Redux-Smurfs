@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 
-import { getSmurfs } from '../actions';
+import { getSmurfs, addSmurf } from '../actions';
 
 /*
  to wire this component up you're going to need a few things.
@@ -22,6 +22,18 @@ class App extends Component {
     this.props.getSmurfs();
   }
 
+  addSmurf = e => {
+    e.preventDefault();
+    this.props.addSmurf(this.state)
+    this.setState({
+       name: '', age: '', height: ''
+      })
+  }
+
+  handleInputChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
 
     return (
@@ -29,6 +41,7 @@ class App extends Component {
 
         <div className="header">
           <h1>SMURFS! 2.0 W/ Redux</h1>
+          <img src="https://vignette.wikia.nocookie.net/smurfs/images/5/5e/Smurfs_villge_harmony.jpg/revision/latest/scale-to-width-down/670?cb=20150812140625" alt="the smurfs village" />
           {/* <div>Welcome to your Redux version of Smurfs!</div>
           <div>Start inside of your `src/index.js` file!</div>
           <div>Have fun!</div> */}
@@ -49,9 +62,6 @@ class App extends Component {
             })}
           </ul>
         </div>
-
-
-
 
         <div className="SmurfForm">
 
@@ -97,10 +107,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    getSmurfs
+    getSmurfs, addSmurf
   }
 )(App);
-
-
-
-// export default App;

@@ -33,14 +33,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         fetching: false,
-        smurfs: [...state.smurfs, ...action.payload]
+        smurfs: action.payload
       }
     case FAILURE:
       return {
         ...state,
         fetching: false
       }
-      
+
       // ADD SMURF CASES
     case ADD_SMURF:
       return {
@@ -51,7 +51,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         addingSmurf: false,
-        smurfs: [...state.smurfs, ...action.payload]
+        smurfs: action.payload
       }
     case ADD_SMURF_FAILURE:
       return {

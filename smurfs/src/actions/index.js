@@ -42,15 +42,14 @@ export const getSmurfs = () => dispatch => {
       });
 }
 
-export const addSmurf = () => dispatch => {
+export const addSmurf = (newSmurf) => dispatch => {
   dispatch({ type: ADD_SMURF });
   axios
-    .post('http://localhost:3333/smurfs')
+    .post('http://localhost:3333/smurfs', newSmurf)
     .then(res => {
         dispatch({
           type: ADD_SMURF_SUCCESS,
           payload: res.data
-
         });
       })
     .catch(err => {
