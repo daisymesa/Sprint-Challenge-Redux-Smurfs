@@ -22,7 +22,7 @@ export const FAILURE = "FAILURE";
 export const getSmurfs = () => dispatch => {
   dispatch({ type: FETCHING });
   axios
-    .get('http://localhost:3333')
+    .get('http://localhost:3333/smurfs')
     .then(res => {
         dispatch({
           type: SUCCESS,
@@ -33,7 +33,7 @@ export const getSmurfs = () => dispatch => {
     .catch(err => {
         dispatch({
           type: FAILURE,
-          err: console.log(err)
+          payload: err
         });
       });
 }

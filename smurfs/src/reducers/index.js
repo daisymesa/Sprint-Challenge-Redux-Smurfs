@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         fetching: false,
-        characters: [...state.characters, ...action.payload]
+        smurfs: [...state.smurfs, ...action.payload]
       }    
       case FAILURE:
       return {

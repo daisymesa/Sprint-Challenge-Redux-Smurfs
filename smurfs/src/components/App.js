@@ -35,8 +35,30 @@ class App extends Component {
         </div>
 
 
-        <div className="smurf-form">
+        <div className="Smurfs">
+          <h1>Smurf Village</h1>
+          <ul>
+            {this.props.smurfs.map(smurf => {
+              return (
+                <div className="Smurf">
+                  <h3>{smurf.name}</h3>
+                  <strong>{smurf.height} tall</strong>
+                  <p>{smurf.age} smurf years old</p>
+                </div>
+              );
+            })}
+          </ul>
+        </div>
+
+
+
+
+        <div className="SmurfForm">
+
+          <h2>Add a Smurf!</h2>
+
           <form onSubmit={this.addSmurf}>
+
             <input
               onChange={this.handleInputChange}
               placeholder="name"
@@ -57,17 +79,18 @@ class App extends Component {
             />
             <button type="submit">Add to the village</button>
           </form>
+
         </div>
 
 
-      </div>
+      </div >
     );
   }
 }
 
 const mapStateToProps = state => ({
-  characters: state.characters,
-  fetching: state.fetching,
+  smurfs: state.smurfs,
+  fetchingSmurfs: state.fetching,
   error: state.error
 })
 
