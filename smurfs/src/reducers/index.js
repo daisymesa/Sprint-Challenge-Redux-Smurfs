@@ -14,6 +14,12 @@ import { FETCHING, SUCCESS, FAILURE } from '../actions';
  }
 */
 
+const initialState = {
+  smurfs: [],
+  fetchingSmurfs: false,
+  error: null
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCHING:
