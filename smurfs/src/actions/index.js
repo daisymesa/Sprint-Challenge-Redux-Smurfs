@@ -22,7 +22,7 @@ export const FAILURE = "FAILURE";
 export const getSmurfs = () => dispatch => {
   dispatch({ type: FETCHING });
   axios
-    .post('http://localhost:3333')
+    .get('http://localhost:3333')
     .then(res => {
         dispatch({
           type: SUCCESS,
