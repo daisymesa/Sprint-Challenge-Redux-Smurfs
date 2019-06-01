@@ -1,28 +1,102 @@
+/* ------- MAIN APP STYLES -------  */
+
 .App {
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 30px 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+@keyframes expand {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.App-title {
-  font-size: 1.5em;
+/* ------- HEADER IMAGE STYLES -------  */
+
+img {
+  border-radius: 2rem;
+  padding: 25px;
+  animation: fadein 2s;
 }
 
-.App-intro {
-  font-size: large;
+/* ------- NAVIGATION STYLES -------  */
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  animation: fadein 2s;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.nav-link p {
+  padding: 5px 45px;
+  color: red;
+  font-size: 1.5rem;
+  border: solid 2px rgb(0, 136, 255);
+  width: 200px;
+  margin: 10px;
+  border-radius: 1rem;
+  background: lightgray;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+
+}
+
+/* ------- SMURF CARD STYLES -------  */
+
+.Smurf {
+  width: 85%;
+  border: solid 1px rgb(0, 136, 255);
+  margin: 25px;
+  border-radius: 1rem;
+  background: lightgray;
+  animation: fadein 2s;
+
+}
+
+/* ------- FORM STYLES -------  */
+
+form {
+  animation: fadein 2s;
+}
+
+input {
+  padding: 10px 25px;
+  margin: 25px auto;
+  display: block;
+  width: 250px;
+  height: 25px;
+  font-size: 1rem;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 250px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: red;
+  border: solid 1px rgb(0, 136, 255);
+  background: lightgray;
+}
+
+button:hover {
+  cursor: pointer;
+  border: solid 2.5px rgb(0, 136, 255);
 }
